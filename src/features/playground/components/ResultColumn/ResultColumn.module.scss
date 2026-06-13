@@ -1,0 +1,122 @@
+.column {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  /* 프로바이더별 브랜드 컬러를 dot에 반영 */
+  &[data-provider='openai'] {
+    --provider-color: var(--color-openai);
+  }
+  &[data-provider='anthropic'] {
+    --provider-color: var(--color-anthropic);
+  }
+  &[data-provider='ollama'] {
+    --provider-color: var(--color-ollama);
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface-2);
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--provider-color, var(--color-text-faint));
+  flex-shrink: 0;
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.provider {
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+}
+
+.model {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: var(--color-text-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.elapsed {
+  font-size: 11px;
+  color: var(--color-text-faint);
+  font-family: var(--font-mono);
+}
+
+.copyBtn {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--color-text-muted);
+
+  &:hover {
+    background-color: var(--color-surface-3);
+    color: var(--color-text);
+  }
+}
+
+.body {
+  flex: 1;
+  padding: var(--space-4);
+  overflow-y: auto;
+  max-height: 520px;
+}
+
+.text {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-small);
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.error {
+  font-size: var(--font-xsmall);
+  font-family: var(--font-mono);
+  color: var(--color-danger);
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.placeholder {
+  font-size: var(--font-xsmall);
+  color: var(--color-text-faint);
+}

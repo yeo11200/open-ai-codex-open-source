@@ -1,0 +1,42 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-text-muted);
+  font-size: var(--font-xsmall);
+}
+
+.dots {
+  display: inline-flex;
+  gap: 3px;
+
+  i {
+    width: 5px;
+    height: 5px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    animation: blink 1.2s var(--ease) infinite both;
+  }
+
+  i:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  i:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+.label {
+  color: var(--color-text-faint);
+}
+
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+}

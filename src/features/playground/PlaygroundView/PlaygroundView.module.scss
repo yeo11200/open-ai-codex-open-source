@@ -1,0 +1,114 @@
+.view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.body {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: 0;
+}
+
+/* ── 편집 패널 ── */
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-5) var(--space-8);
+  border-right: 1px solid var(--color-border);
+  overflow-y: auto;
+}
+
+.tempRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tempLabel {
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.tempInput {
+  flex: 1;
+  accent-color: var(--color-accent);
+}
+
+.tempValue {
+  font-family: var(--font-mono);
+  font-size: var(--font-xsmall);
+  color: var(--color-text);
+  width: 28px;
+  text-align: right;
+}
+
+.targetsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.blockLabel {
+  font-size: var(--font-xsmall);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+}
+
+.runBtn {
+  width: 100%;
+}
+
+/* ── 결과 영역 ── */
+.results {
+  padding: var(--space-5);
+  overflow-y: auto;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-4);
+  height: 100%;
+  align-content: start;
+
+  &[data-count='1'] {
+    grid-template-columns: minmax(0, 720px);
+  }
+  &[data-count='2'] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  &[data-count='3'] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.emptyState {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--color-text-faint);
+  font-size: var(--font-small);
+}
+
+@media (max-width: 1024px) {
+  .body {
+    grid-template-columns: 1fr;
+  }
+
+  .editor {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .grid[data-count='2'],
+  .grid[data-count='3'] {
+    grid-template-columns: 1fr;
+  }
+}
