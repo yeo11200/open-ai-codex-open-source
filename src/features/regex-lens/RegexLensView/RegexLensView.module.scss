@@ -120,6 +120,13 @@
   color: var(--color-text);
 }
 
+.cardDesc {
+  font-size: var(--font-xsmall);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: calc(var(--space-2) * -1);
+}
+
 @media (max-width: 900px) {
   .body {
     padding: var(--space-5) var(--space-4);

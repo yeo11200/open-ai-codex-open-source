@@ -44,6 +44,7 @@ Compare multiple LLMs side-by-side, and *see* what your code actually does — a
 - **Deterministic tokenizer** breaks a pattern into colour-coded pieces (anchors, groups, quantifiers, character classes…) with a plain-language description for every token.
 - **Live match highlighting** against your own test string, updated as you type.
 - **AI explanation** layered on top — summary, behaviour, and matching/non-matching examples — powered by the same provider engine.
+- **AI regex generator** — describe what you want in plain language and give *must-match* / *must-not-match* examples; Lumen generates a pattern, fills it in, and **validates it against your examples instantly** (pass/fail per case) using the deterministic matcher.
 - Built-in presets (email, URL, date, hex colour, phone) so it's useful the moment you open it.
 
 ### 🔒 Privacy & local-first

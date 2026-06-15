@@ -1,0 +1,15 @@
+.select {
+  height: 30px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: var(--font-xsmall);
+  font-family: var(--font-mono);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+}

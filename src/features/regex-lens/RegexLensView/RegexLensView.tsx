@@ -4,6 +4,7 @@ import { PageHeader } from '@/components/layout/PageHeader';
 
 import { AiExplanationPanel } from '../components/AiExplanationPanel';
 import { MatchPreview } from '../components/MatchPreview';
+import { RegexGeneratorPanel } from '../components/RegexGeneratorPanel';
 import { TokenBreakdown } from '../components/TokenBreakdown';
 import { REGEX_PRESETS } from '../constants';
 import { buildSegments, runRegex } from '../utils/regex-matcher';
@@ -32,6 +33,11 @@ export const RegexLensView = () => {
     setPattern(preset.pattern);
     setFlags(preset.flags);
     setSample(preset.sample);
+  };
+
+  const handleGenerated = (nextPattern: string, nextFlags: string) => {
+    setPattern(nextPattern);
+    setFlags(nextFlags);
   };
 
   return (
@@ -75,6 +81,15 @@ export const RegexLensView = () => {
           />
         </div>
         {!result.ok && <p className={styles.invalid}>⚠ {result.error}</p>}
+
+        <section className={styles.panelCard}>
+          <h2 className={styles.cardTitle}>✨ AI로 정규식 만들기</h2>
+          <p className={styles.cardDesc}>
+            만들고 싶은 패턴을 설명하고 예시를 적으면, AI가 정규식을 생성해 위 입력란에 채우고 예시로
+            검증합니다.
+          </p>
+          <RegexGeneratorPanel onGenerated={handleGenerated} />
+        </section>
 
         <div className={styles.columns}>
           <section className={styles.panelCard}>

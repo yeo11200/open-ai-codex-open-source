@@ -1,0 +1,1 @@
+export { RegexGeneratorPanel } from './RegexGeneratorPanel';
